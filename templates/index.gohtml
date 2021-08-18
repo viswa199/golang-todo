@@ -12,6 +12,12 @@
         <input type="text" name="todo"><br>
         <input type="submit" value="add todo">
     </form>
-    {{.todo}}
+        {{range .}}
+            <li>
+                {{.Todo}}
+                <a href="/delete/{{.Todo}}">delete</a>
+                <br>
+            </li>
+        {{end}}
 </body>
 </html>
