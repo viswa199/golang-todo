@@ -25,16 +25,7 @@ var (
 	results []*todo
 )
 
-/*func subPath(path string) string {
-	var s2 string
-	for i := 8; i < len(s2); i++ {
-		s2 =s2+ string(path[i])
-	}
-	return s2
-}*/
-
 func main() {
-	fmt.Println(stringif.Substrings("/delete/to eat more"))
 	router := mux.NewRouter()
 	client, err = mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
 	if err != nil {
@@ -110,5 +101,5 @@ func DeleteTodo(rw http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 		return
 	}
-	http.Redirect(rw,r,"/",301)
+	http.Redirect(rw,r,"/",302)
 }
